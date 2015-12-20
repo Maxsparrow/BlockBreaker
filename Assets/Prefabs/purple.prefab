@@ -58,6 +58,9 @@ MonoBehaviour:
   - {fileID: 21300006, guid: a9f9c53d3cb00c34783d6553b746116c, type: 3}
   - {fileID: 21300010, guid: a9f9c53d3cb00c34783d6553b746116c, type: 3}
   audioClip: {fileID: 8300000, guid: aaa397f9fc8b4464eb1159b1010e8149, type: 3}
+  explosionRadius: 5
+  explosionPower: 10
+  explosion: {fileID: 191950, guid: 9bb0c3b4b6ba947c78d15d7ceaffb612, type: 2}
 --- !u!212 &21236992
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -76,9 +79,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -140,6 +141,18 @@ Prefab:
       propertyPath: audioClip
       value: 
       objectReference: {fileID: 8300000, guid: aaa397f9fc8b4464eb1159b1010e8149, type: 3}
+    - target: {fileID: 0}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 191950, guid: 9bb0c3b4b6ba947c78d15d7ceaffb612, type: 2}
+    - target: {fileID: 0}
+      propertyPath: explosionRadius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: explosionPower
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118780}
