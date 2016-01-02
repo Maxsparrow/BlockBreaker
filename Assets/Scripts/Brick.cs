@@ -6,8 +6,9 @@ public class Brick : MonoBehaviour {
     public static int ActiveBreakableBlocks = 0;
 
     public Sprite[] HitSprite;
-	public AudioClip audioClip;
-	public float explosionPower;
+	public AudioClip crackAudio;
+    public AudioClip explosionAudio;
+    public float explosionPower;
 	
 	private int MaxHits;
     private int TimesHit = 0;
@@ -37,13 +38,14 @@ public class Brick : MonoBehaviour {
 
 	void HandleHits(Collision2D collission)
 	{
-        AudioSource.PlayClipAtPoint(audioClip, transform.position);
+        AudioSource.PlayClipAtPoint(crackAudio, transform.position, 0.7f);
         TimesHit++;
         if (TimesHit >= MaxHits)
         {
 			Instantiate(explosion, this.transform.position, Quaternion.identity);
 			Explode (collission);
-			Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(explosionAudio, transform.position);
+            Destroy(gameObject);
 			ActiveBreakableBlocks--;
 			levelManager.BrickDestroyed();
 		}
